@@ -1,0 +1,25 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[cod]
+*.pyd
+*.pytest_cache/
+*.egg-info/
+
+# IDEs
+.vscode/
+.idea/
+
+# Drivers
+drivers/
+
+# Allure reports
+allure_results/
+
+# OS
+.DS_Store
