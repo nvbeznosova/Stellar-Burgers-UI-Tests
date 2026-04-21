@@ -1,69 +1,108 @@
-# Проект: Тестирование Stellar Burgers
+markdown
+# Stellar Burgers — Selenium Test Automation
 
-## Описание
+Automated UI tests for [Stellar Burgers](https://stellarburgers.nomoreparties.site/), 
+a space-themed fast-food web application where users can build and order custom burgers.
 
-Проект содержит автоматические тесты сайта [Stellar Burgers](https://stellarburgers.nomoreparties.site/) с использованием Selenium и pytest.
+## Project Description
 
-Тесты покрывают следующие функции:
+This project contains end-to-end UI tests built with **Selenium WebDriver** and **pytest**. 
+The tests verify critical user flows including registration, login, account management, 
+and burger constructor navigation.
 
-1. **Регистрация**
-   - Успешная регистрация нового пользователя
-   - Ошибка при вводе некорректного пароля
+## Test Coverage
 
-2. **Вход**
-   - Вход через кнопку «Войти в аккаунт» на главной
-   - Вход через форму регистрации и восстановления пароля
+### Registration
+- Successful registration with valid data
+- Error message for invalid password (less than 6 characters)
 
-3. **Личный кабинет**
-   - Переход в личный кабинет
-   - Переход в конструктор через кнопку «Конструктор» и логотип
-   - Выход из аккаунта
+### Login
+- Via "Sign In" button on the main page
+- Via "Personal Account" button
+- Via registration form
+- Via password recovery form
 
-4. **Конструктор**
-   - Проверка переходов между разделами: «Булки», «Соусы», «Начинки»
+### Personal Account
+- Navigate to personal account
+- Navigate back to Constructor via "Constructor" button
+- Navigate back via logo click
+- Logout from account
 
-5. **Структура проекта**
+### Constructor
+- Tab switching between sections:
+  - Buns
+  - Sauces
+  - Fillings
 
-my_first_vscode_project/
-├── .vscode/
-├── .venv/
-├── Sprint_5/
-│ ├── tests/
-│ │ ├── conftest.py
-│ │ ├── test_constructor.py
-│ │ ├── test_login.py
-│ │ ├── test_personal_account.py
-│ │ └── test_registration.py
-│ ├── locators/
-│ │ ├── constructor_page_locators.py
-│ │ ├── login_page_locators.py
-│ │ ├── personal_account_locators.py
-│ │ └── registration_page_locators.py
-│ └── utils.py
+## Project Structure
+
+Sprint_5/
+├── tests/
+│ ├── conftest.py
+│ ├── test_constructor.py
+│ ├── test_login.py
+│ ├── test_personal_account.py
+│ └── test_registration.py
+├── locators/
+│ ├── constructor_page_locators.py
+│ ├── login_page_locators.py
+│ ├── personal_account_locators.py
+│ └── registration_page_locators.py
+└── utils.py
 ├── README.md
 └── .gitignore
 
-6. **Как запускать тесты**
+text
 
-1. Активировать виртуальное окружение:
+## Setup & Installation
 
-```bash
-source .venv/bin/activate
+### Requirements
+- Python 3.13+
+- Google Chrome (latest version)
+- Selenium
+- Webdriver Manager
+- pytest
 
-2. Запустить тест через pytest:
-pytest Sprint_5/tests/
+### Installation
 
-Все тесты автономны: открывают браузер Chrome, выполняют проверку и закрывают браузер с помощью driver.quit().
+1. **Clone the repository**
+   ```bash
 
-7. **Генерация логинов и паролей**
+   git clone https://github.com/nvbeznosova/Stellar-Burgers-UI-Tests.git
+   cd Sprint_5
+
+2. **Create and activate a virtual environment**:
+   bash
+   python -m venv .venv
+   source .venv/bin/activate   # On macOS/Linux
+   # .venv\Scripts\activate    # On Windows
+
+3. **Install dependencies**:
+   bash
+
+   pip install -r requirements.txt
+
+### Running tests
+
+1. **Run all tests**:
+   bash
+   pytest tests/
+
+5. **Run a specific test file**:
+   bash
+   pytest tests/test_registration.py
+
+6. **Run with verbose output**: 
+   bash
+   pytest -v tests/
+
+
+All tests are independent: each test opens its own browser instance, executes checks, and closes the browser using driver.quit().
+
+## Generating Test Data
+
+python
 from utils import generate_email, generate_password
 
 email = generate_email()
 password = generate_password()
-
-8. **Требования**
-Python 3.13+
-Selenium
-Webdriver Manager
-pytest
-Google Chrome

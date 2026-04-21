@@ -1,11 +1,25 @@
+# Virtual environment
+.venv/
+
+# Python
 __pycache__/
 *.pyc
-.venv/
-allure_results/
-allure-report/
-reports/
+*.pyo
+*.pyd
+*.py[cod]
+*.pyd
+*.pytest_cache/
+*.egg-info/
+
+# IDEs
 .vscode/
 .idea/
+
+# Drivers
 drivers/
-chromedriver
-geckodriver
+
+# Allure reports
+allure_results/
+
+# OS
+.DS_Store
