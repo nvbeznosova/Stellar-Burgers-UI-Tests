@@ -36,23 +36,29 @@ and burger constructor navigation.
 
 ## Project Structure
 
-Sprint_5/
-├── tests/
-│ ├── conftest.py
-│ ├── test_constructor.py
-│ ├── test_login.py
-│ ├── test_personal_account.py
-│ └── test_registration.py
-├── locators/
-│ ├── constructor_page_locators.py
-│ ├── login_page_locators.py
-│ ├── personal_account_locators.py
-│ └── registration_page_locators.py
-└── utils.py
-├── README.md
-└── .gitignore
+```
+Stellar-Burgers-UI-Tests/
+    ├── README.md
+    ├── conftest.py
+    ├── requirements.txt
+    ├── utils.py
+    ├── locators/
+    │   ├── __init__.py
+    │   ├── constructor_page_locators.py
+    │   ├── login_page_locators.py
+    │   ├── personal_account_locators.py
+    │   └── registration_page_locators.py
+    ├── pages/
+    │   ├── login_page.py
+    │   ├── main_page.py
+    │   └── register_page.py
+    └── tests/
+        ├── test_constructor.py
+        ├── test_login.py
+        ├── test_personal_account.py
+        └── test_registration.py
 
-text
+```
 
 ## Setup & Installation
 
@@ -67,42 +73,46 @@ text
 
 1. **Clone the repository**
    ```bash
-
    git clone https://github.com/nvbeznosova/Stellar-Burgers-UI-Tests.git
-   cd Sprint_5
+   cd Stellar-Burgers-UI-Tests
+   ```
 
 2. **Create and activate a virtual environment**:
-   bash
+   ```bash
    python -m venv .venv
    source .venv/bin/activate   # On macOS/Linux
    # .venv\Scripts\activate    # On Windows
+   ```
 
 3. **Install dependencies**:
-   bash
-
+   ```bash
    pip install -r requirements.txt
+   ```
 
 ### Running tests
 
 1. **Run all tests**:
-   bash
+    ```bash
    pytest tests/
+   ```
 
-5. **Run a specific test file**:
-   bash
+2. **Run a specific test file**:
+    ```bash
    pytest tests/test_registration.py
+   ```
 
-6. **Run with verbose output**: 
-   bash
+3. **Run with verbose output**: 
+   ```bash
    pytest -v tests/
+   ```
 
 
 All tests are independent: each test opens its own browser instance, executes checks, and closes the browser using driver.quit().
 
 ## Generating Test Data
-
-python
+```python
 from utils import generate_email, generate_password
 
 email = generate_email()
 password = generate_password()
+```
