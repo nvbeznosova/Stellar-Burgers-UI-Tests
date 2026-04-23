@@ -1,5 +1,10 @@
-markdown
+markdown   ```bash
 # Stellar Burgers — Selenium Test Automation
+
+[![Python](https://img.shields.io/badge/Python-3.13+-blue.svg)](https://www.python.org/)
+[![Selenium](https://img.shields.io/badge/Selenium-4.15+-green.svg)](https://www.selenium.dev/)
+[![pytest](https://img.shields.io/badge/pytest-7.4+-orange.svg)](https://docs.pytest.org/)
+[![Page Object Model](https://img.shields.io/badge/Pattern-POM-blueviolet.svg)](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
 
 Automated UI tests for [Stellar Burgers](https://stellarburgers.nomoreparties.site/), 
 a space-themed fast-food web application where users can build and order custom burgers.
